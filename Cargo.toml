@@ -1,0 +1,19 @@
+[package]
+name = "netstack"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "lib_netstack"
+path = "src/lib.rs"
+
+[[bin]]
+name = "netstack"
+path = "src/bin/main.rs"
+
+[dependencies]
+clap = "3.0.0-beta.5"
+rand = "0.8.4"
+smoltcp = "0.7.5"
+thiserror = "1.0.30"
+trust-dns = { version = "0.20.3", default-features = false }
