@@ -12,7 +12,8 @@ fn main() -> Result<()> {
     http::get(&mut buf, host, port)?;
 
     let result = str::from_utf8(&buf)?;
-    println!("{result}");
+    let body = result.split("\r\n\r\n").last().unwrap_or("").trim();
+    println!("{body}");
 
     Ok(())
 }
